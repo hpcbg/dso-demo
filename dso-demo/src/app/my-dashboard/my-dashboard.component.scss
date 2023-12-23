@@ -1,0 +1,32 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  background: beige;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+.mat-mdc-progress-spinner {
+  width: 40px!important;
+  margin-left: 49%;
+}
+
+.mat-mdc-form-field {
+  width: 800px;
+  font-size: large;
+}

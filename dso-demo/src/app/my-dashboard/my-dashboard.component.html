@@ -1,0 +1,77 @@
+<div class="grid-container">
+  <mat-grid-list cols="3" rowHeight="280px">
+    <mat-grid-tile *ngFor="let card of cards" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{card.title}}
+            <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+              <button mat-menu-item>Expand</button>
+              <button mat-menu-item>Remove</button>
+            </mat-menu>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>
+            <div class="connect-button">
+              <p>Connect to Test Service</p>
+              <button (click)="testConnect()" mat-raised-button style="margin-left:20px" color="accent">Connect</button>
+              <br>
+            </div>
+
+            <div *ngIf="isConnected" class="connection-info">
+              <p>You have successfully connected to the Service Store. You can now use this Service to perform ANSWER
+                Knowledge
+                Interactions</p>
+              <!-- <p><b>Knowledge Base ID:</b>http://example.org/a-knowledge-base-id</p>
+              <p><b>Knowledge Interaction
+                      ID:</b>http://example.org/a-knowledge-base-id/interaction/319466f5-865e-46b0-a2aa-ddb6dde68bc9</p>
+              <p><b>Knowledge Interaction Type:</b>AskKnowledgeInteraction</p> -->
+
+
+            </div>
+
+            <div *ngIf="connectorCreated">
+              <p>A Smart Connectore has been created to communicate with the <b>Knowledge Base</b>: {{knowledgeBaseId}}
+              </p>
+              <p>Please register an Answer KnowledgeInteraction, after defining the Graph Patter</p>
+              <mat-form-field>
+                <mat-label>Graph Pattern</mat-label>
+                <textarea matInput [(ngModel)]="graphPattern"></textarea>
+              </mat-form-field>
+              <br>
+              <button (click)="testRegisterInteraction()" mat-raised-button style="margin-left:20px"
+                color="accent">Register Interaction</button>
+                <br>
+            </div>
+            <div *ngIf="interactionCreated">
+              <p>Now you can start waiting for an ASK request</p>
+              <!-- <mat-form-field>
+                  <mat-label>Binding set</mat-label>
+                  <textarea matInput [(ngModel)]="bindingSet"></textarea>
+              </mat-form-field> -->
+              <br>
+              <button (click)="handleStart()" mat-raised-button style="margin-left:20px" color="accent">Handle
+                Start</button>
+            </div>
+
+            <mat-spinner *ngIf="pendingResponse"></mat-spinner>
+
+            <div *ngIf="pollingStarted" class="test-response">
+              <p>Service A Asked! Enter a Binding set and Answer</p>
+              <mat-form-field>
+                <mat-label>Binding set</mat-label>
+                <textarea matInput [(ngModel)]="bindingSet"></textarea>
+              </mat-form-field>
+              <br>
+              <button (click)="handleSend()" mat-raised-button style="margin-left:20px" color="accent">Answer</button>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

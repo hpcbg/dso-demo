@@ -1,0 +1,7 @@
+{
+    "keyrockBaseAuth": "ZmU2ZWMzOWItZmVmMy00ZDY1LThkZmQtYzYyNTVjOWEwN2JjOjUyNTVmNTJlLWYxNWQtNDljMi1iOTNkLTg0YjMzNzJjZTQxMA==",
+    "serviceStoreUser": "set@hpc.bg",
+    "serviceStorePass": "asdfiuY12#",
+    "knowledgeBaseId": "https://ke.interconnectproject.eu/rest/adapter/HPC-Ask",
+    "AnswerKnowledgeBaseId" : "https://ke.interconnectproject.eu/rest/adapter/HPC-Answer"
+}

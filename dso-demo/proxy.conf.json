@@ -1,0 +1,17 @@
+{
+  "/oauth2/*": {
+    "target": "http://172.18.1.5:3005",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/servicestore/*": {
+    "target": "http://62.44.125.136:9090",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/smartconnector/*": {
+    "target": "http://62.44.125.136:9090",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
